@@ -5,7 +5,7 @@ import { createWorldMap } from "./world-map/world-map.js";
 document.addEventListener("DOMContentLoaded", async () => {
 
 	// Fetch the JSON file
-	const response = await (fetch("assets/navigation.json"));
+	const response = await (fetch("navigation.json"));
 	const data = await response.json();
 
 	createWorldMap();
