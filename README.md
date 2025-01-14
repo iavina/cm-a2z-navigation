@@ -31,8 +31,8 @@ Vite built version deployed to surge.sh
 
 ## To add more functionality
 
-When a section is changed, a `section:chagned` event is fired. You can add a
-in other components to interact with such events in this way:
+When a section is changed, a `section:chagned` event is fired. You can add an
+event listener in other components to interact with such events in this way:
 
 ```javascript
 document.addEventListener("section:changed", event => {
