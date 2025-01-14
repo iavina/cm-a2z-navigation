@@ -6,8 +6,17 @@
 npx vite
 ```
 
-Alternatively, see a deployed version at
+## To build
+
+```bash
+npx vite build
+```
+
+GitHub Pages
 [https://iavina.github.io/cm-a2z-navigation]
+
+Vite built version deployed to surge.sh
+[https://divergent-error.surge.sh/]
 
 ## Overview
 
