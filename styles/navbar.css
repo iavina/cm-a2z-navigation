@@ -1,0 +1,39 @@
+#nav-bar {
+	display: flex;
+	margin: 0 auto;
+	flex-direction: column;
+	width: fit-content;
+}
+
+#nav-list {
+	margin: 4rem 0 0.8rem 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 3rem;
+}
+
+.nav-item {
+	cursor: pointer;
+	transition: color 0.3s ease;
+	color: #878787;
+}
+.nav-item.active {
+	color: #000000;
+}
+
+.underline-base {
+	height: 1px;
+	background-color: #ebebeb;
+	width: 100%;
+	transform: scaleX(1.2)
+}
+
+#underline-active {
+	background-color: #000000;
+	width: 100px;
+	height: 1px;
+	transform-origin: 0% 50%;
+	transform: translate(0px, -1px) scaleX(1);
+	transition: all ease 0.3s;
+}
