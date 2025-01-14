@@ -1,5 +1,5 @@
-import { createNavBar } from "./navbar.js";
-import { createWorldMap } from "./world-map.js";
+import { createNavBar } from "./navbar/navbar"
+import { createWorldMap } from "./world-map/world-map";
 
 // Load data and setup events
 document.addEventListener("DOMContentLoaded", async () => {

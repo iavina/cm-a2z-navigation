@@ -1,10 +1,13 @@
 # A2Z Navigation - Critical Mass
 
-## To Run
+## To run locally
 
 ```bash
 npx vite
 ```
+
+Alternatively, see a deployed version at
+[https://iavina.github.io/cm-a2z-navigation]
 
 ## Overview
 
@@ -17,14 +20,31 @@ npx vite
 - **world-map.js**:
   - Listens for "section:changed" to handle functionality
 
-## Notes
+## To add more functionality
 
-- The "section:changed" event carries the city's data in its detail property
+When a section is changed, a `section:chagned` event is fired. You can add a
+in other components to interact with such events in this way:
+
+```javascript
+document.addEventListener("section:changed", event => {
+  const city = event.detail;
+});
+```
+
+The `detail` property contains all the relevant data for the selected section.
+
+## Other comments
+
 - Added more data in the JSON file:
   - `utc` to correctly display the time in a selected city
   - `position` a 0 to 100 value to pin the location of a city in the map
-- All animation in handled adding / removing classes
+- All animation is handled by adding / removing classes
   - There are transition animations as well as keyframe animations
   - All animations are handled by transforms over other css properties
-- The app is somewhat responsive in the sense that it won't break when resized,
-but smaller devices would benefit from a different layout
+- The app would benefit with a different layout for mobile, but it is responsive;
+interactive elements position themselves differently to stay in bounds.
+
+## TODO
+
+- There is some basic error handling and validation, but ideally we validate with
+a more robust solution, like JSON schemas.

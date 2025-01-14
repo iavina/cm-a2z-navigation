@@ -1,4 +1,3 @@
-
 export const createWorldMap = () => {
 
 	let utc = 0;
@@ -16,10 +15,25 @@ export const createWorldMap = () => {
 	document.addEventListener("section:changed", event => {
 
 		const city = event.detail;
+		if (!validateData(city)) return;
+
 		utc = city.utc;
 		handleSectionChanged(city);
 		updateUTCTime()
 	});
+}
+
+// Ideally we validate with a json schema, but for now we'll just check for the required fields
+const validateData = (data) => {
+	if (data.position === undefined) {
+		console.error("Missing position data for city", data);
+		return false;
+	}
+	if (data.utc === undefined) {
+		console.error("Missing UTC data for city", data);
+		return false;
+	}
+	return true;
 }
 
 const handleSectionChanged = (data) => {
